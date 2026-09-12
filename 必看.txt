@@ -1,0 +1,20 @@
+此项目为ai心理健康助手，是B站上的项目但是项目后端不全，我使用ai帮助补写完成，如果需要本地运行需要改写下面部分
+
+
+项目位于ai-springboot/src/main/resources/application.yml
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/{你的数据库名字}?useSSL=false&serverTimezone=UTC
+    username: {账户名}
+    password: {密码}
+
+    ai:
+      openai:
+        chat:
+          options:
+            model: deepseek-ai/DeepSeek-V3.2
+            tool-calls:
+              enabled: true
+          completions-path: /v1/chat/completions
+        api-key: {属于你的api-key}
+        base-url: https://api.siliconflow.cn
