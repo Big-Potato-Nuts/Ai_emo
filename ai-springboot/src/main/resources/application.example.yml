@@ -1,0 +1,28 @@
+# 公开配置模板：复制为 application.yml 后，在本机填写真实配置。
+# 请勿提交 application.yml、数据库密码、AI API Key 或 JWT 密钥。
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/mental_health_assistant?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:change-me}
+  ai:
+    openai:
+      chat:
+        options:
+          model: ${AI_MODEL:gpt-4o-mini}
+          tool-calls:
+            enabled: true
+        completions-path: ${AI_COMPLETIONS_PATH:/v1/chat/completions}
+      api-key: ${OPENAI_API_KEY:}
+      base-url: ${OPENAI_BASE_URL:https://api.openai.com}
+
+server:
+  port: ${SERVER_PORT:8080}
+
+jwt:
+  secret: ${JWT_SECRET:replace-with-a-long-random-secret}
+  expiration: ${JWT_EXPIRATION:1800000}
+  refresh-expiration: ${JWT_REFRESH_EXPIRATION:604800000}
+  header: ${JWT_HEADER:Authorization}
+  token-prefix: ${JWT_TOKEN_PREFIX:Bearer }

@@ -1,0 +1,21 @@
+# Local runtime configuration and secrets
+ai-springboot/src/main/resources/application.yml
+.env
+.env.*
+!.env.example
+
+# Build outputs and dependencies
+ai-springboot/target/
+ai-vue/node_modules/
+ai-vue/dist/
+
+# IDE and operating-system files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local uploads and logs
+ai-springboot/uploads/
+*.log
